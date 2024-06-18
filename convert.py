@@ -40,9 +40,12 @@ class J2U:
                     return None
         else:
             return None
-        
-        byteList.append(0x50)
+        for i in range(11 - len(string)):
+            byteList.append(0x50)
+            
+        # print(byteList)
         return bytearray(byteList)
+        
 
 
     def readFileAsByteArray(file_path):
@@ -252,7 +255,8 @@ class U2J:
         else:
             return None
         
-        byteList.append(0x50)
+        for i in range(6 - len(string)):
+            byteList.append(0x50)
         return bytearray(byteList)
     
     class PokemonData:
